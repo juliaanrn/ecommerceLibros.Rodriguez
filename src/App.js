@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './NavBar'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-Mi primera App de Ecommerce
+<h1>
+  <NavBar></NavBar>
+  Mi primera App de Ecommerce
+</h1>
     </div>
   );
 }
