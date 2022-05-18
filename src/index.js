@@ -9,3 +9,21 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+
+
+const Libros = (props) => {
+  return (
+    <>
+      <hr />
+      <h2>{props.name}</h2>
+      <div>Categoria: <span>{props.categoria}</span></div>
+      <div>Precio: <span>{props.precio}</span></div>
+      <div>Duración: <span>{props.autor} semanas</span></div>
+    </>
+  );
+}
+
+
+
+export default App;
