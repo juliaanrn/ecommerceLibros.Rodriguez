@@ -1,6 +1,5 @@
 import './App.css';
 import NavBar from './componentes/NavBar';
-import ItemListContainer from './componentes/ItemListContainer';
 import ItemCount from './componentes/ItemCount';
 import ItemListContainer from './componentes/ItemListContainer';
 
@@ -18,7 +17,7 @@ const App = () => {
       <ItemListContainer nombre="Winnieh-ThePooh" precio="$1.500" autor="A. A. Milne" categoria="Infantil" />
       <ItemCount></ItemCount>
       <hr></hr>
-      <ItemListContainer nombre="Sherlock Holmes" precio="$1.350" autor="Arthur Conan Doyle" categoria="Policial" />
+      <ItemListContainer></ItemListContainer>
       <ItemCount></ItemCount>
       <hr></hr>
     </>

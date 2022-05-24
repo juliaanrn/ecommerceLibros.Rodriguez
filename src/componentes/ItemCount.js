@@ -1,20 +1,24 @@
 import { useState } from 'react';
 
-const ItemCount = () =>{
-    let añadirAlCarrito= 0;
+const ItemCount = ({ initial, stock, onAdd }) => {
 
-const [valoraciones, setValoraciones] = useState(0);
-    
-const increment = () => {
-if (valoraciones < 3) setValoraciones(valoraciones+1);
-}    
-    
-    
+    const [valoraciones, setValoraciones] = useState(initial = 0);
+
+    const increment = () => {
+        if (valoraciones < stock) setValoraciones(valoraciones + 1);
+    }
+
+    const decrement = () => {
+        if (valoraciones > stock) setValoraciones(valoraciones - 1);
+    };
+
     return (
-<>
-<p>{valoraciones} unidades</p>
-<button onClick= {increment}>Sumar Unidades</button>
-</>
+        <>
+            <p>{valoraciones} Unidades</p>
+            <button onClick={increment}>Sumar Unidades</button>
+            <button onClick={decrement}>Restar Unidades</button>
+            <button onClick={() => onAdd(valoraciones)}>Agregar al Carrito</button>
+        </>
     );
 }
 
