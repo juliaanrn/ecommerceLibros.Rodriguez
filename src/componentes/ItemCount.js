@@ -9,7 +9,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     }
 
     const decrement = () => {
-        if (valoraciones > stock) setValoraciones(valoraciones - 1);
+        if (valoraciones > 1) setValoraciones(valoraciones - 1);
     };
 
     return (
