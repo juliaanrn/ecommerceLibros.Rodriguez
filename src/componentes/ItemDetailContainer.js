@@ -1,23 +1,22 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-const { productos } = require ("../componentes/productos");
+const { productos } = require("../componentes/productos");
 
-let is_stock 
+const ItemDetailContainer = () => {
+    const [dato, setDato] = useState({});
+    const { id } = useParams();
 
-const GetItem = (timeout, task) => {
-    return ItemDetail((resolve, reject) => {
-        if (is_stock) {
-            setTimeout(() => {
-                resolve(task)
-            }, timeout);
-        } else {
-            reject("Error")
-        }
-    })
+    useEffect(() => {
+        customFetch(2000, productos.find(item => item.id === (id)))
+            .then(result => setDato(result))
+            .catch(err => console.log(err))
+    }, []);
+
+
+return (
+    <ItemDetail item={dato} />
+);
 }
-
-cargarcatalogo()
-    .then(() => cargarcatalogo(3000))
-    .catch((err) => console.log(err))
-    .finally();
 
 export default ItemDetailContainer;

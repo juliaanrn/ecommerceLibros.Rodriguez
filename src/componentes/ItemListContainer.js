@@ -1,4 +1,7 @@
+import { useParams } from "react-router-dom";
+
 const ItemListContainer = (props) => {
+    const { id } = useParams ();
     return (
         <>
             <div>Nombre: <span>{props.nombre}
