@@ -1,4 +1,6 @@
 const productos = [
+
+
     {
         id: '01',
         name: 'La Guerra de los Mundos',
@@ -28,5 +30,13 @@ const productos = [
     }
 ]
 
-
-export default productos;
+export const getData = new Promise((resolve, reject) => {
+    let condition = true
+    setTimeout(() => {
+        if (condition) {
+            resolve(productos)
+        } else {
+            reject('salio mal')
+        }
+    }, 2000)
+})

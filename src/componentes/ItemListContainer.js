@@ -1,18 +1,26 @@
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import ItemList from './ItemList'
+import { getData } from '../mocks/fakeapi'
 
 const ItemListContainer = (props) => {
-    const { id } = useParams ();
+
+    const [listaProductos, setListaProductos] = useState([])
+    const [cargando, setCargando] = useState(false)
+
+    useEffect(() => {
+        setCargando(true)
+        getData
+            .then((res) => setListaProductos(res))
+            .catch((error) => console.log(error))
+            .finally(() => setCargando(false))
+    }, [])
+
     return (
-        <>
-            <div>Nombre: <span>{props.nombre}
-            </span>
-            </div>
-            <div>Precio: <span>{props.precio}</span></div>
-            <div>Autor: <span>{props.autor}</span></div>
-            <div>Stock: <span>{props.stock}</span></div>
-            <div>Categoria: <span>{props.categoria}</span></div>
-        </>
-    );
+        <div>
+            <h1>Lista de productos</h1>
+            {cargando ? <p>Cargando...</p> : <ItemList listaProductos={listaProductos} />}
+        </div>
+    )
 }
 
 export default ItemListContainer;
