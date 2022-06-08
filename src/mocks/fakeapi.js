@@ -8,7 +8,7 @@ const productos = [
         costo: '$1.000',
         autor: 'H. G. Welles',
         stock: 10,
-        img: 'https://th.bing.com/th/id/R.0484cc27a14ee673b6ae673d5b236be8?rik=%2b6M9sX01oQOvcQ&pid=ImgRaw&r=0',
+        img: 'https://th.bing.com/th/id/R.efb0e28833f1eb6bfd24529fc6fa6e03?rik=mBUukzQv%2b4Rxkg&pid=ImgRaw&r=0',
     },
     {
         id: '02',

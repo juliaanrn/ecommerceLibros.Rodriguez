@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from './CartWidget';
-import { link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const NavBar = () =>{
     return (
